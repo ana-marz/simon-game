@@ -18,12 +18,10 @@ body {
 }
 
 .btn {
-  margin: 25px;
   display: inline-block;
   height: 200px;
   width: 200px;
   border: 10px solid black;
-  border-radius: 20%;
 }
 
 .game-over {
@@ -33,18 +31,22 @@ body {
 
 .red {
   background-color: red;
+  border-radius: 0 180px 0 0;
 }
 
 .green {
   background-color: green;
+  border-radius: 180px 0 0 0;
 }
 
 .blue {
   background-color: blue;
+  border-radius: 0 0 180px 0;
 }
 
 .yellow {
   background-color: yellow;
+  border-radius: 0 0 0 180px
 }
 
 .pressed {
