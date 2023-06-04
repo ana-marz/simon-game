@@ -8,19 +8,27 @@ var started = false;
 var level = 0;
 
 
-//if A key is pressed -> startGame  
-$(document).keypress(function(event) {
+//if A is pressed -> startGame  
+/* $(document).keypress(function(event) {
     if ((event.key == "A" || event.key == "a") && (started == false)){ 
         $("#level-title").html("Level" + 0); 
         started = true;
         nextSequence(); 
     };
-} )
+} ) */
 
+$(".start-game").click(function () {
+    if (started == false) {
+        $("#level-title").html("Level" + 0);
+        started = true;
+        $("#start-text").html("");
+        nextSequence();
+    };
+});
 
-$(".btn").click(function () { //detecta btn clicado
-    var userChosenColor = $(this).attr("id"); //guarda id del boton clicado
-    userClickedPattern.push(userChosenColor); //añade al array de user
+$(".btn").click(function () { //detect clicked btn 
+    var userChosenColor = $(this).attr("id"); //save id
+    userClickedPattern.push(userChosenColor); //add al array
 
     playSound(userChosenColor);
     animatePress(userChosenColor);
@@ -43,7 +51,7 @@ function checkAnswer(currentLevel) {
     else {
         console.log("wrong");
         userClickedPattern = [];
-        $("#level-title").html("GAME OVER, press A to Restart");      
+        $("#level-title").html("GAME OVER<br>Restart");      
         gameOver();        
     }  
 }
@@ -90,4 +98,5 @@ function startOver() {
     level = 0;
     gamePattern = [];
     started = false;
+    $("#start-text").html("Start");
 }
