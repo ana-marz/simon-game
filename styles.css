@@ -18,10 +18,31 @@ body {
 }
 
 .btn {
+  margin: 0;
   display: inline-block;
   height: 200px;
   width: 200px;
   border: 10px solid black;
+}
+
+.start-game {
+  background-color: #134882;
+  border-radius: 50PX;
+  height: 100px;
+  width: 100px;
+  border: 10px solid black;
+  position: absolute;
+  margin: 160px 170px;
+  z-index: 10;
+  display: grid;
+}
+
+#start-text {
+  color: #FEF2BF;
+  font-family: 'Press Start 2P', cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .game-over {
